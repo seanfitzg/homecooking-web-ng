@@ -1,0 +1,10 @@
+<app-recipe
+  *ngIf="recipes"
+  [recipe]="recipes[0]"
+  (eventClick)="handleEventClicked($event)"
+>
+</app-recipe>
+<div>sldfjskjf</div>
+<a [routerLink]="['/add']">Add a recipe</a>
+
+<a [routerLink]="['/edit/1']">Edit</a>

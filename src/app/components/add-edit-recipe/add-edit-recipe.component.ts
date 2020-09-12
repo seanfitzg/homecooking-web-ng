@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-add-edit-recipe',
   templateUrl: './add-edit-recipe.component.html',
-  styleUrls: ['./add-edit-recipe.component.sass'],
+  styleUrls: ['./add-edit-recipe.component.css'],
 })
 export class AddEditRecipeComponent implements OnInit {
   recipeId: number;
