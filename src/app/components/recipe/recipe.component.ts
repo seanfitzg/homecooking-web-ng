@@ -16,7 +16,12 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  clickMe(): void {
-    this.eventClick.emit('clicked!!!');
-  }
+  // editRecipe(recipeId): void {
+  //   console.log('recipeId', recipeId);
+  //   this.eventClick.emit('clicked!!!');
+  // }
+
+  // deleteRecipe(): void {
+  //   this.eventClick.emit('clicked!!!');
+  // }
 }

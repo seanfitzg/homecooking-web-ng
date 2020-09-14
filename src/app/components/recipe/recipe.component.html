@@ -1,4 +1,14 @@
-<div fxLayout="row" class="zero">
+<div fxLayout="row" fxLayoutAlign="space-between center" [ngClass]="'recipe'">
   <div>{{ recipe.name }}</div>
-  <button mat-stroked-button color="primary" (click)="clickMe()">Edit</button>
+  <div>
+    <button
+      [ngClass]="'editButton'"
+      mat-stroked-button
+      color="primary"
+      [routerLink]="['/edit', recipe.id]"
+    >
+      Edit
+    </button>
+    <button mat-stroked-button color="primary">Delete</button>
+  </div>
 </div>

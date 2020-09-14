@@ -1,2 +1,40 @@
-<p>add-edit-recipe works!</p>
-<div>{{ recipeId }}</div>
+<div
+  [ngClass]="'editForm'"
+  fxLayout="column"
+  fxLayoutAlign="space-between center"
+>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput value="{{ recipe && recipe.name }}" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput value="{{ recipe && recipe.description }}" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Method</mat-label>
+    <textarea
+      matInput
+      name="Comments"
+      mdInput
+      placeholder="Comments"
+      rows="5"
+      value="{{ recipe && recipe.method }}"
+    ></textarea>
+  </mat-form-field>
+
+  <div
+    [ngClass]="'saveButton'"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <button mat-stroked-button color="primary" (click)="saveRecipe()">
+      Save
+    </button>
+    <button mat-stroked-button color="primary" [routerLink]="['/']">
+      Cancel
+    </button>
+  </div>
+</div>

@@ -1,10 +1,14 @@
-<div>
+<div [ngClass]="'recipeList'">
   <mat-list role="list">
     <mat-list-item *ngFor="let recipe of recipes" role="listitem">
       <app-recipe [recipe]="recipe" (eventClick)="handleEventClicked($event)">
       </app-recipe
     ></mat-list-item>
   </mat-list>
-</div>
 
-<button mat-stroked-button><a [routerLink]="['/add']">Add a recipe</a></button>
+  <div [ngClass]="'addButton'" fxLayout="row" fxLayoutAlign="end center">
+    <button mat-stroked-button>
+      <a [routerLink]="['/add']">Add a recipe</a>
+    </button>
+  </div>
+</div>

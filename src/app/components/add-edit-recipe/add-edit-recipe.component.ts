@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { RecipeService } from '../../services/recipe-service.service';
+import Recipe from '../../models/recipe';
 
 @Component({
   selector: 'app-add-edit-recipe',
@@ -8,10 +11,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddEditRecipeComponent implements OnInit {
   recipeId: number;
-  constructor(private currentRoute: ActivatedRoute) {}
+  recipe: Recipe;
+  constructor(
+    private currentRoute: ActivatedRoute,
+    private recipeSvc: RecipeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.recipeId = this.currentRoute.snapshot.params.id as number;
+    this.recipeSvc.getRecipesById(this.recipeId).subscribe((recipe) => {
+      console.log('recipe', recipe);
+      this.recipe = recipe;
+    });
     console.log('recipeId', this.recipeId);
+  }
+
+  saveRecipe(): void {
+    console.log('save');
+    //this.router.navigate()
   }
 }

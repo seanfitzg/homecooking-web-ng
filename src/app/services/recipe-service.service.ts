@@ -11,7 +11,15 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
 
   public getRecipes() {
-    return this.http.get<Recipe[]>('http://localhost:5000/recipes');
-    // return [{ name: 'sean' }];
+    return this.http.get<Recipe[]>(
+      'https://homecooking.azurewebsites.net/recipes'
+    );
+    // return this.http.get<Recipe[]>('http://localhost:5000/recipes');
+  }
+  public getRecipesById(id) {
+    return this.http.get<Recipe>(
+      `https://homecooking.azurewebsites.net/recipes/${id}`
+    );
+    // return this.http.get<Recipe[]>('http://localhost:5000/recipes');
   }
 }
