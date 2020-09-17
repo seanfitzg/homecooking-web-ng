@@ -1,4 +1,9 @@
-# HomeCooking
+This is a demo application I'm building to learn/investigate some skills and technologies required to build a full stack Angular 10 -> ASP.Net Core application.
+
+The ASP.Net Core api is here -> https://github.com/seanfitzg/HomeCookingApi/tree/master/HomeCooking.Api
+
+So far, this app uses:
+- [Auth0](https://auth0.com/) to enable username authentication.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
